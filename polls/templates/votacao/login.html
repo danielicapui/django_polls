@@ -1,0 +1,18 @@
+<!-- votacao/templates/votacao/login.html-->
+ {% extends "votacao/base.html" %}
+ {% load bootstrap_filters %}
+
+ {% block title %} Login {% endblock %}
+ {% block content %}
+ <h1> Faça Login</h1>
+ <form method="post" class=" needs-validation" novalidate>
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="id_username"> Nome de Usuário</label>
+        {{ form.username|add_class:"form-control" }}
+        <label for="id_password"> Senha</label>
+        {{ form.password|add_class:"form-control" }}
+    </div>
+    <button type="submit" class="btn btn-primary">Logar</button>
+ </form>
+ {% endblock %}

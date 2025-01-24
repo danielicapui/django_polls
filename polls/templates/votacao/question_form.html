@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Criar Votação
+        </title>
+    </head>
+    <body>
+        <h1>
+            Criar uma nova Pergunta
+        </h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">
+                Salvar
+            </button>
+        </form>
+    </body>
+</html>

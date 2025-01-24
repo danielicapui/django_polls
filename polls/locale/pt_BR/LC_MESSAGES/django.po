@@ -1,0 +1,16 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: pt_BR\n"
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "Sua senha não pode ser muito semelhante às suas outras informações pessoais."
+
+msgid "Your password must contain at least 8 characters."
+msgstr "Sua senha deve conter pelo menos 8 caracteres."
+
+msgid "Your password can’t be a commonly used password."
+msgstr "Sua senha não pode ser uma senha comumente usada."
+
+msgid "Your password can’t be entirely numeric."
+msgstr "Sua senha não pode ser inteiramente numérica."
