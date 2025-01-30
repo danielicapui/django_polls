@@ -1,0 +1,34 @@
+{% extends "votacao/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h3 class="text-center">Login</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="{% url 'account_login' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="id_login">Email:</label>
+                            <input type="email" name="login" id="id_login" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_password">Senha:</label>
+                            <input type="password" name="password" id="id_password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{% url 'account_signup' %}">Criar uma conta</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

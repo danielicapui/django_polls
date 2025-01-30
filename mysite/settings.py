@@ -33,7 +33,8 @@ ALLOWED_HOSTS = []
 from decouple import config
 
 TELEGRAM_TOKEN = config('TELEGRAM_TOKEN')
-
+CLIENT_ID_GOOGLE=config('CLIENT_ID_GOOGLE')
+CLIENT_SECRET_GOOGLE=config('CLIENT_SECRET_GOOGLE')
 
 # Application definition
 
@@ -83,6 +84,11 @@ SOCIALACCOUNT_PROVIDERS = {
         'LOCALE_FUNC': lambda request: 'en_US',
         'VERIFIED_EMAIL': False,
         'VERSION': 'v7.0',
+        'APP': {
+            'client_id': 'YOUR_FACEBOOK_APP_ID',
+            'secret': 'YOUR_FACEBOOK_APP_SECRET',
+            'key': ''
+        }
     },
     'google': {
         'SCOPE': [
@@ -93,8 +99,13 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'online',
         },
         'OAUTH_PKCE_ENABLED': True,
+        'APP': {
+            'client_id': CLIENT_ID_GOOGLE,
+            'secret':CLIENT_SECRET_GOOGLE,
+        }
     }
 }
+
 
 
 
