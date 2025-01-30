@@ -5,7 +5,8 @@ from . import views
 app_name = 'votacao'
 router = DefaultRouter()
 router.register(r'questions', views.QuestionViewSet)
-
+router.register(r'posts',views. PostViewSet)
+router.register(r'messages',views.ChatMessageViewset)
 urlpatterns = [
     path('create/', views.question_create, name='question_create'),
     path('', views.index, name='index'),

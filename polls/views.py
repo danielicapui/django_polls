@@ -3,8 +3,8 @@ from .forms import SignUpForm,QuestionForm
 import requests
 from django.contrib.auth import login,authenticate
 from rest_framework import viewsets
-from .models import Question
-from .serializers import QuestionSerializer
+from .models import Question,Post,ChatMessage
+from .serializers import QuestionSerializer,ChatMessageSerializer,PostSerializer
 from django.urls import reverse
 from django.contrib.auth.forms import AuthenticationForm
 class QuestionViewSet(viewsets.ModelViewSet):
@@ -51,3 +51,10 @@ def cadastro(request):
     else:
         form=SignUpForm()
     return render(request,'votacao/signup2.html',{'form':form})
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset=Post.objects.all()
+    serializer_class=PostSerializer
+class ChatMessageViewset(viewsets.ModelViewSet):
+    queryset=ChatMessage.objects.all()
+    serializer_class=ChatMessageSerializer
